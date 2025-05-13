@@ -1,0 +1,37 @@
+ <h1>Simulador de Login</h1>
+
+  <input id="nome" placeholder="Nome">
+  <input id="senha" type="password" placeholder="Senha">
+  <input id="nome" placeholder="Nome"><br><br>
+  <input id="senha" type="password" placeholder="Senha"><br><br>
+
+  <button onclick="
+    const nomeValor = nome.value;
+    const senhaValor = senha.value;
+    const usuario = nome.value;
+    const senhaDigitada = senha.value;
+    const senhaCorreta = '1234';
+
+    if (nomeValor && senhaValor) {      
+      
+    if (!usuario || !senhaDigitada) {
+      resultado.innerText = 'Preencha todos os campos.';
+    } else if (senhaDigitada === senhaCorreta) {
+      resultado.innerText = `Login realizado com sucesso! Bem-vindo, ${usuario}.`;
+    } else {
+      resultado.innerText = 'Preencha todos os campos!';
+      resultado.innerText = 'Login falhou: senha incorreta.';
+    }
+  ">
+    Entrar
+  </button>
+
+  <div id="resultado" style="margin-top:10px;"></div>
+  <div id="resultado" style="margin-top: 15px; font-weight: bold;"></div>
+
+</body>
+</html>
+<!-- pesquisa1   "organize" -->
+<!-- pesquisa2   "simplifique meu código"-->
+<!-- pesquisa2   "simplifique meu código"-->
+<!-- pesquisa3   "preciso de uma div que mostra o resultado, login realizado ou nao" -->
