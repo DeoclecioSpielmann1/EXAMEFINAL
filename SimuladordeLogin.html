@@ -1,32 +1,33 @@
- <h1>Simulador de Login</h1>
+<h1>Simulador de Login</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Login</title>
+</head>
+<body>
+
 
   <input id="nome" placeholder="Nome">
   <input id="senha" type="password" placeholder="Senha">
-  <input id="nome" placeholder="Nome"><br><br>
-  <input id="senha" type="password" placeholder="Senha"><br><br>
-
+  
   <button onclick="
-    const nomeValor = nome.value;
-    const senhaValor = senha.value;
-    const usuario = nome.value;
-    const senhaDigitada = senha.value;
+    const nomeValor = document.getElementById('nome').value;
+    const senhaValor = document.getElementById('senha').value;
+    const resultado = document.getElementById('resultado');
     const senhaCorreta = '1234';
 
-    if (nomeValor && senhaValor) {      
-      
-    if (!usuario || !senhaDigitada) {
+    if (!nomeValor || !senhaValor) {
       resultado.innerText = 'Preencha todos os campos.';
-    } else if (senhaDigitada === senhaCorreta) {
-      resultado.innerText = `Login realizado com sucesso! Bem-vindo, ${usuario}.`;
+    } else if (senhaValor === senhaCorreta) {
+      resultado.innerText = `Login realizado com sucesso! Bem-vindo, ${nomeValor}.`;
     } else {
-      resultado.innerText = 'Preencha todos os campos!';
       resultado.innerText = 'Login falhou: senha incorreta.';
     }
   ">
     Entrar
   </button>
 
-  <div id="resultado" style="margin-top:10px;"></div>
   <div id="resultado" style="margin-top: 15px; font-weight: bold;"></div>
 
 </body>
