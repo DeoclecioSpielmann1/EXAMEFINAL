@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Saudação</title>
+</head>
+<body>
+
+  <h1>Saudação</h1>
+  <input id="nome" placeholder="Digite um nome">
+  <button onclick="
+    const nome = document.getElementById('nome').value || 'visitante';
+    const hora = new Date().toLocaleTimeString();
+    document.getElementById('resultado').innerText = `Olá, ${nome}! Agora são ${hora}.`;
+  ">
+    Seja Bem-Vindo
+  </button>
+
+  <div id="resultado"></div>
+
+</body>
+</html>
+<!--pesquisa1 "deixar mais simples meu codigo com horario na minha mensagem" -->
