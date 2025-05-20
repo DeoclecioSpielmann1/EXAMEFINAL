@@ -9,14 +9,27 @@
   <h1>Saudação</h1>
   <input id="nome" placeholder="Digite um nome">
   <button onclick="
-    const nome = document.getElementById('nome').value || 'visitante';
-    const hora = new Date().toLocaleTimeString();
-    document.getElementById('resultado').innerText = `Olá, ${nome}! Agora são ${hora}.`;
+    const nome = document.getElementById('nome').value.trim() || 'visitante';
+    const agora = new Date();
+    const hora = agora.getHours();
+    const minutos = agora.getMinutes().toString().padStart(2, '0');
+    const segundos = agora.getSeconds().toString().padStart(2, '0');
+    let saudacao = '';
+
+    if (hora >= 5 && hora < 12) {
+      saudacao = 'Bom dia';
+    } else if (hora >= 12 && hora < 18) {
+      saudacao = 'Boa tarde';
+    } else {
+      saudacao = 'Boa noite';
+    }
+
+    document.getElementById('resultado').innerText = `${saudacao}, ${nome}! Agora são ${hora}:${minutos}:${segundos}.`;
   ">
     Seja Bem-Vindo
   </button>
 
-  <div id="resultado"></div>
+  <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
 
 </body>
 </html>
